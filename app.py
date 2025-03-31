@@ -35,5 +35,25 @@ def predict_api():
     except Exception as e:
         return jsonify({'error': str(e)})
 
+@app.route('/predict', methods=['POST'])
+def predict():
+    try:
+        # Extract form data and convert to float
+        data = [float(x) for x in request.form.values()]
+        
+        # Reshape and scale input data
+        final_input = scalar.transform(np.array(data).reshape(1, -1))
+        print("Final Input for Prediction:", final_input)
+
+        # Predict using the trained model
+        output = regmodel.predict(final_input)
+        print("Predicted Output:", output[0])
+
+        # Return the prediction to the frontend
+        return render_template("home.html", prediction_text=f"The predicted house price is {output[0]:,.2f}")
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 400
+
 if __name__ == "__main__":
     app.run(debug=True)
