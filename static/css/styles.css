@@ -1,0 +1,83 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Full-page styling */
+body {
+  background: #f8f9fa;  /* Light gray background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+/* Form Container */
+.login {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  text-align: center;
+}
+
+/* Form Title */
+.login h1 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: black;
+  text-align: left;
+}
+
+/* Label Styling */
+.login label {
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+  display: block;
+  text-align: left;
+  margin: 10px 0 5px;
+}
+
+/* Input Fields */
+.login input, .login select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background: white;
+  outline: none;
+}
+
+/* Input Focus Effect */
+.login input:focus, .login select:focus {
+  border-color: #28a745;
+  box-shadow: 0px 0px 6px rgba(40, 167, 69, 0.4);
+}
+
+/* Submit Button */
+.login button {
+  width: 100%;
+  padding: 10px;
+  background: #28a745;  /* Green color */
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+
+/* Button Hover Effect */
+.login button:hover {
+  background: #218838
+}

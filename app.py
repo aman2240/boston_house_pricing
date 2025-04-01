@@ -11,7 +11,7 @@ scalar = pickle.load(open('scaling.pkl', 'rb'))
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('index.html')
 
 @app.route('/predict_api', methods=['POST'])
 def predict_api():
@@ -50,7 +50,7 @@ def predict():
         print("Predicted Output:", output[0])
 
         # Return the prediction to the frontend
-        return render_template("home.html", prediction_text=f"The predicted house price is {output[0]:,.2f}")
+        return render_template("index.html", prediction_text=f"The predicted house price is {output[0]:,.2f} thousand dollars")
 
     except Exception as e:
         return jsonify({'error': str(e)}), 400
